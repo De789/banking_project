@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+  <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Bank Logo" width="120" class="mb-3">
+  <h1 class="fw-bold text-primary">Welcome to MyBank</h1>
+  <p class="lead">Your trusted partner for secure banking solutions.</p>
+
+  <div class="mt-4">
+    <a href="{% url 'open_account' %}" class="btn btn-success btn-lg me-2">Open Account</a>
+    <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg">Login</a>
+  </div>
+</div>
+{% endblock %}
+
+
+<p>This is a home page</p>

@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'open_account' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
