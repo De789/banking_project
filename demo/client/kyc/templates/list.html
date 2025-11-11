@@ -1,0 +1,21 @@
+<!-- kyc/templates/kyc/list.html -->
+<!doctype html>
+<html>
+<head>
+  <title>My KYC</title>
+</head>
+<body>
+  <h2>My KYC Submissions</h2>
+  <p><a href="{% url 'kyc_upload' %}">New Submission</a></p>
+  <ul>
+    {% for item in items %}
+      <li>
+        <a href="{% url 'kyc_detail' item.pk %}">KYC #{{ item.pk }}</a>
+        — submitted {{ item.submitted_at }} — verified: {{ item.verified }}
+      </li>
+    {% empty %}
+      <li>No submissions yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

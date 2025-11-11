@@ -1,0 +1,18 @@
+<!-- kyc/templates/kyc/upload.html -->
+<!doctype html>
+<html>
+<head>
+  <title>Upload KYC</title>
+</head>
+<body>
+  <h2>Upload KYC Documents</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
+  <p><a href="{% url 'kyc_list' %}">My KYC Submissions</a></p>
+</body>
+</html>

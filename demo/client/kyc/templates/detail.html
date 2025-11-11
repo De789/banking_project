@@ -1,0 +1,29 @@
+<!-- kyc/templates/kyc/detail.html -->
+<!doctype html>
+<html>
+<head>
+  <title>KYC Detail</title>
+</head>
+<body>
+  <h2>KYC #{{ kyc.pk }}</h2>
+  <p>Submitted at: {{ kyc.submitted_at }}</p>
+  <p>Verified: {{ kyc.verified }}</p>
+
+  {% if kyc.id_proof_image %}
+    <h3>ID Proof</h3>
+    <img src="{{ kyc.id_proof_image.url }}" alt="ID Proof" style="max-width:400px;">
+  {% endif %}
+
+  {% if kyc.selfie_image %}
+    <h3>Selfie</h3>
+    <img src="{{ kyc.selfie_image.url }}" alt="Selfie" style="max-width:400px;">
+  {% endif %}
+
+  {% if kyc.document_url %}
+    <h3>Document URL</h3>
+    <a href="{{ kyc.document_url }}" target="_blank">{{ kyc.document_url }}</a>
+  {% endif %}
+
+  <p><a href="{% url 'kyc_list' %}">Back to list</a></p>
+</body>
+</html>
